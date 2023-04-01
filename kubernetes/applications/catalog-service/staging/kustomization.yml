@@ -3,3 +3,21 @@ kind: Kustomization
 
 resources:
   - github.com/sewah2012/cloud-native-spring-project/k8s/?ref=master
+patchesStrategicMerge: 
+  - env-patch.yml
+
+configMapGenerator: 
+  - behavior: merge 
+    files: 
+      - application-staging.yml
+    name: catalog-config
+
+images:
+  - name: catalog-service
+    newName: ghcr.io/sewah2012/cloud-native-spring-project
+    newTag: latest 
+
+replicas: 
+  - name: catalog-service 
+    count: 1
+
