@@ -1,0 +1,5 @@
+my:
+  greeting: Welcome to catalog service update from kubernetes production environment!
+spring:
+  config:
+    import: configtree:/workspace/secrets/*/

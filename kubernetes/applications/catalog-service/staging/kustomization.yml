@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - github.com/sewah2012/cloud-native-spring-project/k8s/?ref=master
+  - github.com/sewah2012/cloud-native-spring-project/k8s?ref=main
 patchesStrategicMerge: 
   - env-patch.yml
 
