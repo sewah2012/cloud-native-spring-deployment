@@ -2,24 +2,23 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - github.com/sewah2012/cloud-native-spring-project/k8s?ref=main
+- github.com/sewah2012/cloud-native-spring-project/k8s/?ref=main
 patchesStrategicMerge:
-  - env-patch.yml
-  - volumes-patch.yml
-  - resources-patch.yml
+- env-patch.yml
+- volumes-patch.yml
+- resources-patch.yml
 
 configMapGenerator:
-  - behavior: merge
-    files:
-      - application-production.yml
-    name: catalog-config
+- behavior: merge
+  files:
+  - application-production.yml
+  name: catalog-config
 
 images:
-  - name: catalog-service
-    newName: ghcr.io/sewah2012/cloud-native-spring-project
-    newTag: latest
+- name: catalog-service
+  newName: ghcr.io/sewah2012/cloud-native-spring-project
+  newTag: 6e77bd10f8ca505efcca5bdafab9559b3ef282b6
 
 replicas:
-  - name: catalog-service
-    count: 2
-
+- count: 2
+  name: catalog-service
