@@ -17,7 +17,7 @@ configMapGenerator:
 images:
   - name: catalog-service
     newName: ghcr.io/sewah2012/cloud-native-spring-project
-    newTag: main
+    newTag: latest
 
 replicas:
   - name: catalog-service
